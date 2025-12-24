@@ -8,6 +8,7 @@ export const translations = {
       lacan: '라캉 왁스',
       alminer: '알마이너',
       business: '비즈니스 센터',
+      strategy: '2026 전략',
       shop: '쇼핑몰 바로가기',
     },
     global: {
@@ -117,6 +118,7 @@ export const translations = {
       lacan: 'Lacan Wax',
       alminer: 'Alminer',
       business: 'Business',
+      strategy: '2026 Strategy',
       shop: 'Visit Shop',
     },
     global: {

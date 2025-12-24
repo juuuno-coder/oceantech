@@ -9,7 +9,7 @@
   position: relative;
   overflow: hidden;
   margin-top: -80px; 
-  padding-top: 25vh; /* Push content down from top, but overall it will be higher than center */
+  padding-top: 20vh; /* Lifted text up slightly */
 }
 
 .heroBg {

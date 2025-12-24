@@ -25,10 +25,10 @@ export default function Home() {
         <div className={styles.heroContent}>
           <h1 className="fade-in">Converging<br />Ocean Tech & Beauty</h1>
           <p className="fade-in" style={{ animationDelay: '0.2s' }}>해양 바이오 데이터와 첨단 뷰티 과학의 만남</p>
-          <div className={`${styles.scrollIndicator} fade-in`} style={{ animationDelay: '1.2s' }}>
-             <span>SCROLL</span>
-             <div className={styles.scrollLine}></div>
-          </div>
+        </div>
+        <div className={`${styles.scrollIndicator} fade-in`} style={{ animationDelay: '1.2s' }}>
+           <span>SCROLL</span>
+           <div className={styles.scrollLine}></div>
         </div>
         <div className={styles.heroOverlay}></div>
       </section>

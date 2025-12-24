@@ -36,6 +36,7 @@ export default function Header() {
             <Link href="/lacan" className={styles.link}>{t.nav.lacan}</Link>
             <Link href="/alminer" className={styles.link}>{t.nav.alminer}</Link>
             <Link href="/business" className={styles.link}>{t.nav.business}</Link>
+            <Link href="/presentation/overseas-2026" className={styles.link}>{t.nav.strategy}</Link>
             <a href="http://lacanwax.com/" target="_blank" rel="noopener noreferrer" className={styles.shopBtn}>
               {t.nav.shop}
             </a>
