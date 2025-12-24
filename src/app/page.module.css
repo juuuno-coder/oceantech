@@ -2,13 +2,14 @@
   height: 90vh;
   min-height: 600px;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Changed from center */
   justify-content: center;
   text-align: center;
   color: white;
   position: relative;
   overflow: hidden;
-  margin-top: -80px; /* Counteract padding in layout */
+  margin-top: -80px; 
+  padding-top: 25vh; /* Push content down from top, but overall it will be higher than center */
 }
 
 .heroBg {

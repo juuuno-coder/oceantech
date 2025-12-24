@@ -14,8 +14,8 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image 
-            src="/hero-bg.png" 
-            alt="Ocean Tech Background" 
+            src="/hero-beauty.png" 
+            alt="Ocean Tech Beauty" 
             fill 
             priority
             quality={90}
