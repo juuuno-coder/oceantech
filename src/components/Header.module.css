@@ -1,0 +1,137 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.header.scrolled {
+  background: rgba(253, 251, 247, 0.95);
+  padding: 16px 0;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  backdrop-filter: blur(10px);
+}
+
+/* Dark Hero Override (White Text) */
+.darkHero .logo,
+.darkHero .link,
+.darkHero .langBtn {
+  color: white;
+}
+
+.darkHero .link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.darkHero .langBtn.active {
+  color: white;
+  opacity: 1;
+}
+
+.darkHero .divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.darkHero .shopBtn {
+  background: white;
+  color: var(--primary);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.link {
+  font-size: 0.95rem;
+  color: var(--secondary);
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.shopBtn {
+  padding: 8px 16px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.85rem;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+.mobileMenuBtn {
+  display: none;
+  color: var(--primary);
+}
+
+.darkHero .mobileMenuBtn {
+  color: white;
+}
+
+.shopBtn:hover {
+  opacity: 0.9;
+}
+
+.langSwitch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  padding: 4px;
+}
+
+.langBtn.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.divider {
+  color: var(--border);
+  font-size: 0.8rem;
+}
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Hide desktop nav on mobile for now */
+  }
+  
+  .header {
+    padding: 16px 0;
+  }
+  
+  .scrolled {
+    padding: 12px 0;
+  }
+
+  .mobileMenuBtn {
+    display: block !important; /* Force show on mobile */
+    margin-right: 15px;
+  }
+}

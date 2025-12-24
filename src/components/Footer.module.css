@@ -1,0 +1,72 @@
+.footer {
+  background: var(--primary);
+  color: white;
+  padding: 80px 0 30px;
+  margin-top: 0; /* Removing top margin as sections have their own padding */
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+.companyName {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.address {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.contact p {
+  color: #bbb;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links a {
+  color: #bbb;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: white;
+}
+
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+  text-align: center;
+}
+
+.copyright {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

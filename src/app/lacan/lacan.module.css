@@ -1,0 +1,245 @@
+.page {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.hero {
+  height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  margin-top: -80px;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
+    radial-gradient(circle at 70% 50%, rgba(93, 64, 55, 0.4) 0%, rgba(26, 26, 26, 0.9) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #d4af37; /* Gold border */
+  color: #d4af37;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.heroContent h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color: white;
+  line-height: 1.1;
+  font-family: var(--font-serif);
+}
+
+.heroContent p {
+  font-size: 1.25rem;
+  color: #dcdcdc;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.intro {
+  text-align: center;
+}
+
+.introText {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.introText h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--lacan-primary);
+}
+
+.introText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.featureCard {
+  background: white;
+  padding: 40px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--lacan-bg);
+  box-shadow: 0 10px 30px rgba(93, 64, 55, 0.05);
+}
+
+.featureIcon {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--lacan-primary);
+  opacity: 0.2;
+  margin-bottom: 20px;
+}
+
+.featureCard h3 {
+  color: var(--lacan-primary);
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: var(--lacan-primary);
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.productCard {
+  display: flex;
+  background: white;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.productImage {
+  width: 40%;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderImg {
+  width: 120px;
+  height: 120px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 
+    0 5px 15px rgba(0,0,0,0.2),
+    inset 0 2px 5px rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderImg::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 1px solid #d4af37;
+  opacity: 0.5;
+}
+
+.placeholderImg span {
+  color: #d4af37;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.productCard:hover .placeholderImg {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.productInfo {
+  width: 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--lacan-primary);
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.productInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: var(--lacan-primary);
+}
+
+.productInfo p {
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+  
+  .heroContent p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  .grid, .productList {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .productCard {
+    flex-direction: column;
+  }
+
+  .productImage, .productInfo {
+    width: 100%;
+  }
+
+  .productImage {
+    height: 250px;
+  }
+
+  .productInfo {
+    padding: 24px;
+    align-items: center; /* Center align for mobile */
+    text-align: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}

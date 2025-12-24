@@ -1,0 +1,92 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+/* Variants */
+.primary {
+  background-color: var(--primary);
+  color: var(--surface);
+  border-color: var(--primary);
+}
+.primary:hover {
+  background-color: transparent;
+  color: var(--primary);
+}
+
+.secondary {
+  background-color: var(--secondary);
+  color: white;
+  border-color: var(--secondary);
+}
+.secondary:hover {
+  background-color: transparent;
+  color: var(--secondary);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--primary);
+}
+.ghost:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Brand Specific */
+.lacan {
+  background-color: #5D4037;
+  color: #EDE0D4;
+  border-color: #5D4037;
+}
+.lacan:hover {
+  background-color: transparent;
+  color: #5D4037;
+}
+
+.alminer {
+  background-color: var(--alminer-primary);
+  color: #fff;
+  border-color: var(--alminer-primary);
+  border-radius: 50px; /* More modern, pill-shaped */
+}
+.alminer:hover {
+  background-color: transparent;
+  color: var(--alminer-primary);
+  box-shadow: 0 0 15px rgba(255, 92, 0, 0.2);
+}
+
+/* Sizes */
+.sm {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.md {
+  padding: 12px 32px;
+  font-size: 0.9rem;
+}
+
+.lg {
+  padding: 16px 48px;
+  font-size: 1rem;
+}

@@ -1,0 +1,29 @@
+.section {
+  padding: 100px 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.white {
+  background-color: var(--surface);
+}
+
+.light {
+  background-color: var(--background);
+}
+
+.dark {
+  background-color: var(--primary);
+  color: white;
+}
+
+.none {
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}

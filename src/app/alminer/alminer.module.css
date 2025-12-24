@@ -1,0 +1,364 @@
+.page {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.hero {
+  height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  margin-top: -80px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.backgroundCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, rgba(255, 92, 0, 0.05) 0%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle at 20% 80%, rgba(255, 92, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 140, 0, 0.03) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid var(--alminer-primary);
+  color: var(--alminer-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+  border-radius: 50px;
+}
+
+.heroContent h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color: var(--alminer-primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-family: var(--font-sans); /* Use Sans for tech feel */
+}
+
+.heroContent p {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin-bottom: 50px;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  font-weight: 500;
+  color: var(--alminer-accent);
+}
+
+.pulse {
+  width: 10px;
+  height: 10px;
+  background: var(--alminer-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(52, 152, 219, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 92, 0, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 92, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 92, 0, 0); }
+}
+
+.intro {
+  text-align: center;
+}
+
+.introText {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.introText h2 {
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--alminer-primary);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  margin-bottom: 60px;
+  color: var(--alminer-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.featureCard {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.iconBox {
+  height: 60px;
+  margin-bottom: 24px;
+}
+
+.iconShape {
+  width: 40px;
+  height: 40px;
+  background: var(--alminer-primary);
+  opacity: 0.2;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--alminer-primary);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+}
+
+/* CSS Art: Elasticity Icon */
+.shape1 {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--alminer-accent);
+  border-radius: 50% 50% 0 50%;
+  transform: rotate(-45deg);
+  background: transparent;
+  opacity: 1;
+}
+
+/* CSS Art: Cohesion Icon (Converging dots) */
+.shape2 {
+  width: 40px;
+  height: 40px;
+  background: 
+    radial-gradient(circle at 50% 50%, var(--alminer-accent) 4px, transparent 5px),
+    radial-gradient(circle at 20% 50%, var(--alminer-accent) 3px, transparent 4px),
+    radial-gradient(circle at 80% 50%, var(--alminer-accent) 3px, transparent 4px),
+    radial-gradient(circle at 50% 20%, var(--alminer-accent) 3px, transparent 4px),
+    radial-gradient(circle at 50% 80%, var(--alminer-accent) 3px, transparent 4px);
+  border-radius: 50%;
+  border: 1px dashed var(--alminer-accent);
+  opacity: 1;
+}
+
+/* CSS Art: Shield Icon */
+.shape3 {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 3px solid var(--alminer-accent);
+  border-radius: 0 0 50% 50%;
+  position: relative;
+  opacity: 1;
+}
+.shape3::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -3px;
+  width: 36px;
+  height: 10px;
+  background: transparent;
+  border-top: 3px solid var(--alminer-accent);
+}
+
+.featureCard h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: var(--alminer-primary);
+}
+
+.productHighlight {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.productVisual {
+  flex: 1;
+  background: white;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  position: relative;
+  background: radial-gradient(circle at center, #fff 0%, #f4f4f4 100%);
+}
+
+/* CSS Art: Alminer Wax Tub */
+.productVisual::after {
+  content: 'ALMINER';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #c0392b;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  
+  width: 250px;
+  height: 250px;
+  background: conic-gradient(from 45deg, #ff5c00, #ff8c00, #ff5c00);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 10px 20px rgba(255,255,255,0.3),
+    inset 0 -10px 20px rgba(0,0,0,0.1),
+    0 20px 40px rgba(255, 92, 0, 0.2);
+  transform: rotateX(20deg);
+}
+
+.productVisual::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 50%;
+  transform: rotateX(20deg) scale(1.2);
+  background: transparent;
+}
+
+.productDetail {
+  flex: 1;
+}
+
+.productDetail h3 {
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--alminer-primary);
+}
+
+.productDesc {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--secondary);
+}
+
+.specs {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.specs li {
+  font-size: 1rem;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.specs li::before {
+  content: '✓';
+  color: var(--alminer-accent);
+  font-weight: bold;
+}
+
+.visionSection {
+  text-align: center;
+  color: white;
+  background-color: #1a1a1a !important; /* Force a dark tech background */
+}
+
+.visionLabel {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+}
+
+.visionContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.visionContent h2 {
+  font-family: var(--font-sans);
+  font-size: 3rem;
+  margin-bottom: 24px;
+}
+
+.visionContent p {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem; /* Scaled down from 5rem */
+  }
+
+  .heroContent p {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Stack grid items */
+    gap: 20px;
+  }
+
+  .productHighlight {
+    flex-direction: column; /* Stack product section */
+    gap: 40px;
+  }
+
+  .productVisual {
+    height: 300px; /* Reducing height for mobile */
+  }
+
+  .productDetail h3 {
+    font-size: 2rem;
+  }
+
+  .introText h2 {
+    font-size: 2rem;
+  }
+
+  .featureCard {
+    padding: 30px 20px;
+  }
+}

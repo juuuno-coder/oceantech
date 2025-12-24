@@ -1,0 +1,148 @@
+.mapContainer {
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.mapBackground {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 450px;
+  background: radial-gradient(circle at 50% 50%, #2c3e50 0%, #1a1a1a 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.worldMap {
+  width: 100%;
+  height: 100%;
+  fill: rgba(255, 255, 255, 0.05);
+}
+
+.continent {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 1;
+}
+
+.pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.pinDot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--alminer-primary); /* Use Orange for visibility */
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 2px solid white;
+}
+
+.pinPulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--alminer-primary);
+  border-radius: 50%;
+  animation: pinPulse 2s infinite;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@keyframes pinPulse {
+  0% { width: 12px; height: 12px; opacity: 0.8; }
+  100% { width: 40px; height: 40px; opacity: 0; }
+}
+
+.pinLabel {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 16px;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  text-align: center;
+}
+
+.pin:hover .pinLabel {
+  opacity: 1;
+  bottom: 25px;
+}
+
+.pinLabel strong {
+  display: block;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.pinLabel span {
+  display: block;
+  color: var(--secondary);
+  font-size: 0.75rem;
+}
+
+.partnerList {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.partnerItem {
+  background: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  text-align: center;
+  min-width: 150px;
+}
+
+.partnerItem h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.partnerItem p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .mapBackground {
+    height: 300px;
+  }
+  
+  .pinLabel {
+    opacity: 1; /* Always show labels on mobile */
+    bottom: 20px;
+    background: rgba(255,255,255,0.9);
+    padding: 4px 8px;
+  }
+
+  .pinLabel strong {
+    font-size: 0.7rem;
+  }
+  .pinLabel span {
+    display: none;
+  }
+}
