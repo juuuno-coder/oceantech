@@ -8,6 +8,7 @@
   overflow: hidden;
   position: relative;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  z-index: 1; /* Below Header which usually has high z-index */
 }
 
 /* Background Elements (Abstract "Currents") */

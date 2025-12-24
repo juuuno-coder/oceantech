@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 /**
  * Slide Data Configuration
@@ -144,7 +145,7 @@ const content = {
 
 export default function OverseasStrategy2026() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [lang, setLang] = useState<'en' | 'ko'>('en');
+  const { language } = useLanguage();
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev < TOTAL_SLIDES - 1 ? prev + 1 : prev));
@@ -154,7 +155,7 @@ export default function OverseasStrategy2026() {
     setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
   }, []);
 
-  const t = content[lang];
+  const t = content[language];
 
   // Keyboard navigation
   useEffect(() => {
@@ -175,26 +176,11 @@ export default function OverseasStrategy2026() {
       {/* Background Ambience */}
       <div className={styles.ambientLight} />
 
-      {/* Language Toggle */}
-      <button 
-        onClick={() => setLang(prev => prev === 'en' ? 'ko' : 'en')}
-        style={{ 
-          position: 'absolute', 
-          top: '3rem', 
-          right: '12rem', 
-          zIndex: 30,
-          background: 'rgba(255,255,255,0.1)',
-          border: '1px solid rgba(255,255,255,0.2)',
-          color: 'white',
-          padding: '8px 16px',
-          borderRadius: '20px',
-          cursor: 'pointer',
-          backdropFilter: 'blur(5px)',
-          fontSize: '0.9rem'
-        }}
-      >
-        {lang === 'en' ? '🇰🇷 KOREAN' : '🇺🇸 ENGLISH'}
-      </button>
+      {/* Note: Local Language Toggle removed. We rely on Global Header or separate page state if header is hidden.
+          However, since this is a presentation page often viewed fullscreen, users might want a toggle. 
+          But the requirement is to SYNC with global state. 
+          Since Layout provides Header, the Header should be visible or the user can navigate back.
+      */}
 
       {/* --- Slide 1: Cover --- */}
       <section className={`${styles.slide} ${currentSlide === 0 ? styles.active : ""}`}>
