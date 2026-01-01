@@ -6,14 +6,49 @@ export const translations = {
       home: '홈',
       about: '연구소 소개',
       lacan: '라캉 왁스',
-      alminer: '알마이너',
-      business: '비즈니스 센터',
-      strategy: '2026 전략',
-      shop: '쇼핑몰 바로가기',
+      alminer: 'R-minu',
+      shop: '제품구매',
+    },
+    shopPage: {
+      title: '제품 구매',
+      subtitle: '구매하실 브랜드를 선택해주세요.',
+      lacan: {
+        title: 'LACAN WAX',
+        desc: '전문가들을 위한 하이엔드 왁스 솔루션',
+        btn: '라캉몰 바로가기 (전문가용)',
+        note: '라캉 왁스는 전문가 인증 후 구매 가능합니다.'
+      },
+      alminer: {
+        title: 'R-MINU',
+        desc: '집에서 만나는 전문가의 손길, 프리미엄 셀프 왁싱',
+        btn: 'R-minu 구매하기 (일반용)',
+        note: '공식 홈페이지 단독 혜택을 만나보세요.'
+      },
+      global: {
+        title: 'Global Store',
+        desc: 'Select your preferred global marketplace',
+        amazon: 'Amazon US',
+        shopee: 'Shopee SEA',
+        qoo10: 'Qoo10 Japan',
+        rakuten: 'Rakuten'
+      }
+    },
+    checkout: {
+      title: '주문 결제',
+      shippingInfo: '배송 정보',
+      paymentInfo: '결제 정보', 
+      orderSummary: '주문 상품 정보',
+      labels: {
+        recipient: '받는 분',
+        phone: '연락처',
+        address: '주소',
+        memo: '배송 메모'
+      },
+      btn: '결제하기'
     },
     global: {
       title: 'Global Network',
-      subtitle: '전 세계와 함께하는 오션해양테크',
+      subtitle: '전 세계와 함께하는 뷰티 솔루션',
       description: '아마존, 쇼피, 큐텐 등 글로벌 주요 유통 채널을 통해 K-Beauty의 우수성을 알리고 있습니다.',
       partners: [
         { name: 'Amazon US', region: 'North America' },
@@ -50,18 +85,18 @@ export const translations = {
       }
     },
     hero: {
-      title: '한국오션해양테크연구소',
-      subtitle: '해양 기술과 뷰티 사이언스의 만남',
+      title: 'Premium Waxing',
+      subtitle: '전문가를 위한 라캉, 당신을 위한 알마이너',
       cta: '자세히 보기',
     },
     about: {
-      title: '연구소 소개',
-      description: '한국오션해양테크연구소는 해양 바이오 자원에서 추출한 유효 성분과 첨단 데이터 분석 기술을 결합하여, 뷰티 산업의 새로운 패러다임을 제시합니다.',
+      title: 'Company Info',
+      description: '우리는 최고의 왁싱 기술력으로 전문가와 개인 모두를 위한 최적의 제모 솔루션을 제공합니다.',
       ceo: '대표이사: 조제복',
       address: '부산광역시 남구 못골번영로 71번길 74 (대연동, 부산예술대학교 본관 4층)',
       contact: '문의하기',
-      vision: 'Vision',
-      visionText: '글로벌 No.1 뷰티 데이터 플랫폼',
+      vision: 'Brand Philosophy',
+      visionText: 'Experts Choice, Premium Standard',
     },
     lacan: {
       title: 'LACAN WAX',
@@ -74,38 +109,60 @@ export const translations = {
         { title: 'Technical Education', desc: '라캉 아카데미를 통해 단순 제품 공급을 넘어, 시술 테크닉과 살롱 경영 노하우를 공유합니다.' }
       ],
       products: [
-        { name: 'Lacan Hard Wax', desc: '최상의 그립감과 낮은 융점으로 모든 부위에 적용 가능한 전문가용 프리미엄 하드 왁스.', tag: 'Signature' },
-        { name: 'Lacan Brazilian Pack', desc: 'Y존 미백 및 주름 개선 이중 기능성 인증. 시술 후 진정과 탄력을 위한 특수 설계 마스크.', tag: 'Best Seller' },
-        { name: 'Post-Care Solution', desc: '인그로운 헤어 예방과 피부 진정을 위한 전문가 전용 애프터케어 라인.', tag: 'Professional' },
-        { name: 'Pre-Waxing Oil', desc: '피부 보호막을 형성하여 스킨 탈락을 방지하고 통증을 완화하는 전처리 오일.', tag: 'Essential' }
+        { name: 'Lacan Hard Wax', desc: '하이엔드 하드왁스 라캉 왁싱샵 전용 (1Kg)', tag: 'Signature', img: '/lacan/products/hard_wax.jpeg' },
+        { name: 'Rocket Solution Quick 5 (240 Sheets)', desc: '라캉 로켓솔루션 Quick 5 브라질리언 팩-240장', tag: 'Professional', img: '/lacan/products/pack_240.jpeg' },
+        { name: 'Rocket Solution Quick 5 (160 Sheets)', desc: '라캉 로켓솔루션 Quick 5 브라질리언 팩-160장', tag: 'Best Seller', img: '/lacan/products/pack_160.jpeg' },
+        { name: 'Rocket Solution Quick 5 (80 Sheets)', desc: '라캉 로켓솔루션 Quick 5 브라질리언 팩-80장', tag: 'Starter', img: '/lacan/products/pack_80.jpeg' }
       ],
       cta: '전문가 인증 및 파트너 신청'
     },
     alminer: {
-      title: 'ALMINER',
+      title: 'R-MINU',
       subtitle: 'Expertise Made Easy, Professional Self-Waxing',
       description: '알마이너는 전문가용 왁스 브랜드 "라캉(LA CAN)"의 기술력을 홈케어로 확장한 프리미엄 셀프 왁싱 브랜드입니다. 집에서도 실수가 없도록 안전하고 완벽한 제모를 위해 3단계 핵심 테크놀로지를 적용했습니다.',
-      comingSoon: '데이터 기반 뷰티 솔루션 고도화 중',
+      comingSoon: '저자극 & 고밀착 프리미엄 포뮬러',
       features: [
-        { title: '엘라스틱 테크', desc: '끊어지거나 깨지지 않는 유연함으로 롱 스트립 시술이 가능한 고탄성 포뮬러' },
-        { title: '모발 응집 테크', desc: '85% 이상의 고순도 소나무 수지로 짧고 미세한 털까지 완벽하게 잡아내는 기술' },
-        { title: '스킨 프로텍트', desc: '피부 점착은 낮추고 모발 응집력은 높여 자극을 최소화한 저온 공법 적용' }
+        { title: '엘라스틱 테크 (Elasticity)', desc: '공중합체(Copolymer MI 150) 성분으로 시술 후에도 왁스가 끊어지거나 부서지지 않으며, 특유의 탄성으로 넓고 얇은 롱 스트립 시술이 가능합니다.' },
+        { title: '모발 응집 테크 (Hair Cohesion)', desc: 'Pinus Massoniana 나무에서 추출한 아비에트산(Abietic acid) 85% 이상의 접착 성분으로 짧고 미세한 모발까지 완벽하게 응집하여 제거합니다.' },
+        { title: '밀착 코팅 테크 (Adhesion Coating)', desc: '점착성분(Tackifier)과 분리성분(Paraffin #55)의 최적 배합으로 피부 자극은 낮추고 모근에 가장 가까운 모발까지 확실하게 잡아줍니다.' }
       ],
       product: {
         name: '알마이너 하드 왁스',
         desc: '페이스부터 바디, 브라질리언까지 하나로 끝내는 올인원 프리미엄 하드 왁스. 50-55도의 낮은 융점으로 피부 자극을 최소화했습니다.',
+        price: '49,800',
+        originalPrice: '69,000',
+        discount: '28%',
         specs: [
-          'Elasticity Tech: 끊어짐 없는 탄성',
-          'Hair Cohesion Tech: 강력한 모발 그립',
-          'Low Temp Method: 50~55°C 저온 시술',
-          'Paraffin #55 함유: 부드러운 발림성'
+          'Elasticity Tech: MI 150 고탄성 포뮬러',
+          'Hair Cohesion Tech: 아비에트산 85% 함양',
+          'Adhesion Coating: 모근 밀착 제어',
+          'Food Grade: 저자극 식품등급 원료 사용'
         ]
       },
-      cta: '지금 쿠팡에서 구매하기'
+      cta: '지금 쿠팡에서 구매하기',
+      shop: {
+        buyNow: '바로 구매하기',
+        addToCart: '장바구니',
+        total: '총 상품 금액',
+        quantity: '수량',
+        soldOut: '일시품절',
+        options: [
+          { label: '200g × 1개', price: 9500 },
+          { label: '400g × 1개', price: 14400 },
+          { label: '500g × 1개', price: 14450 },
+          { label: '1000g × 1개', price: 21140 },
+        ],
+        selectOption: '옵션 선택'
+      },
+      gallery: {
+        pro1kg: 'R-minu 1kg 전문가용',
+        home200g: 'R-minu 200g 홈케어 키트',
+        texture: '프리미엄 텍스처 (무색/무향)'
+      }
     },
     footer: {
-      rights: '© 2024 Korea Ocean Marine Tech Research Institute. All rights reserved.',
-      companyName: '(주)오션테크해양연구소',
+      rights: '© 2024 Ocean Tech Co., Ltd. All rights reserved.',
+      companyName: '(주)오션테크',
       businessNum: '사업자등록번호: 000-00-00000',
       tel: 'Tel: 010-7169-3438',
       email: 'Email: jbanion@naver.com'
@@ -116,10 +173,46 @@ export const translations = {
       home: 'Home',
       about: 'About Us',
       lacan: 'Lacan Wax',
-      alminer: 'Alminer',
+      alminer: 'R-minu',
       business: 'Business',
-      strategy: '2026 Strategy',
-      shop: 'Visit Shop',
+      shop: 'Shop',
+    },
+    shopPage: {
+      title: 'Shop',
+      subtitle: 'Select a brand to purchase.',
+      lacan: {
+        title: 'LACAN WAX',
+        desc: 'High-end wax solutions for professionals',
+        btn: 'Go to Lacan Mall',
+        note: 'Lacan Wax is for authorized professionals.'
+      },
+      alminer: {
+        title: 'R-MINU',
+        desc: 'Professional expertise for home use',
+        btn: 'Buy R-minu',
+        note: 'Exclusive offers on official site.'
+      },
+      global: {
+        title: 'Global Store',
+        desc: 'Select your preferred global marketplace',
+        amazon: 'Amazon US',
+        shopee: 'Shopee SEA',
+        qoo10: 'Qoo10 Japan',
+        rakuten: 'Rakuten'
+      }
+    },
+    checkout: {
+      title: 'Checkout',
+      shippingInfo: 'Shipping Info',
+      paymentInfo: 'Payment Info',
+      orderSummary: 'Order Summary',
+      labels: {
+        recipient: 'Recipient',
+        phone: 'Phone',
+        address: 'Address',
+        memo: 'Note'
+      },
+      btn: 'Place Order'
     },
     global: {
       title: 'Global Network',
@@ -160,18 +253,18 @@ export const translations = {
       }
     },
     hero: {
-      title: 'Korea Ocean Marine Tech Research Institute',
-      subtitle: 'Convergence of Marine Tech & Beauty Science',
+      title: 'Premium Waxing Solutions',
+      subtitle: 'Professional Standards for Every Need',
       cta: 'Learn More',
     },
     about: {
       title: 'About Us',
-      description: 'We present a new paradigm in the beauty industry by combining active ingredients extracted from marine bio-resources with advanced data analytics.',
+      description: 'We provide optimal hair removal solutions for both professionals and individuals with top-tier waxing technology.',
       ceo: 'CEO: Jo Je-bok',
       address: '4F Main Bldg, Busan All Arts College, 74 Motgol-beonyeong-ro 71-beongil, Nam-gu, Busan, Korea',
       contact: 'Contact Us',
-      vision: 'Vision',
-      visionText: 'Global No.1 Beauty Data Platform',
+      vision: 'Brand Philosophy',
+      visionText: 'Experts Choice, Premium Standard',
     },
     lacan: {
       title: 'LACAN WAX',
@@ -184,38 +277,60 @@ export const translations = {
         { title: 'Technical Education', desc: '라캉 아카데미를 통해 단순 제품 공급을 넘어, 시술 테크닉과 살롱 경영 노하우를 공유합니다.' }
       ],
       products: [
-        { name: 'Lacan Hard Wax', desc: '최상의 그립감과 낮은 융점으로 모든 부위에 적용 가능한 전문가용 프리미엄 하드 왁스.', tag: 'Signature' },
-        { name: 'Lacan Brazilian Pack', desc: 'Y존 미백 및 주름 개선 이중 기능성 인증. 시술 후 진정과 탄력을 위한 특수 설계 마스크.', tag: 'Best Seller' },
-        { name: 'Post-Care Solution', desc: '인그로운 헤어 예방과 피부 진정을 위한 전문가 전용 애프터케어 라인.', tag: 'Professional' },
-        { name: 'Pre-Waxing Oil', desc: '피부 보호막을 형성하여 스킨 탈락을 방지하고 통증을 완화하는 전처리 오일.', tag: 'Essential' }
+        { name: 'Lacan Hard Wax', desc: 'High-End Hard Wax for Professional Use (1Kg)', tag: 'Signature', img: '/lacan/products/hard_wax.jpeg' },
+        { name: 'Rocket Solution Quick 5 (240 Sheets)', desc: 'Lacan Rocket Solution Quick 5 Brazilian Pack - 240 Sheets', tag: 'Professional', img: '/lacan/products/pack_240.jpeg' },
+        { name: 'Rocket Solution Quick 5 (160 Sheets)', desc: 'Lacan Rocket Solution Quick 5 Brazilian Pack - 160 Sheets', tag: 'Best Seller', img: '/lacan/products/pack_160.jpeg' },
+        { name: 'Rocket Solution Quick 5 (80 Sheets)', desc: 'Lacan Rocket Solution Quick 5 Brazilian Pack - 80 Sheets', tag: 'Starter', img: '/lacan/products/pack_80.jpeg' }
       ],
       cta: '전문가 인증 및 파트너 신청'
     },
     alminer: {
-      title: 'ALMINER',
+      title: 'R-MINU',
       subtitle: 'Expertise Made Easy, Professional Self-Waxing',
-      description: 'Alminer is a premium self-waxing brand that translates the expertise of "LA CAN" for home use. It incorporates 3 core technologies to ensure safe, flawless hair removal for beginners at home.',
-      comingSoon: 'Advancing Data-Driven Beauty Solutions',
+      description: 'R-minu is a premium self-waxing brand that translates the expertise of "LA CAN" for home use. It incorporates 3 core technologies to ensure safe, flawless hair removal for beginners at home.',
+      comingSoon: 'Low Irritation & High Adhesion Premium Formula',
       features: [
-        { title: 'Elasticity Tech', desc: 'High-elasticity formula allowing long-strip application without breaking or cracking.' },
-        { title: 'Hair Cohesion Tech', desc: 'Uses over 85% high-purity pine resin to perfectly grip even short and fine hairs.' },
-        { title: 'Skin Protect', desc: 'Low-temperature method that minimizes skin irritation by prioritizing hair grip over skin adhesion.' }
+        { title: 'Elasticity Tech', desc: 'Using Copolymer MI 150, the wax remains flexible without breaking, enabling perfect long-strip application with high elasticity.' },
+        { title: 'Hair Cohesion Tech', desc: 'Contains over 85% Abietic acid extracted from Pinus Massoniana for powerful grip on even short and fine hairs.' },
+        { title: 'Adhesion Coating Tech', desc: 'Optimal blending of Tackifier and Paraffin #55 to minimize skin adhesion while maximizing hair grip near the root.' }
       ],
       product: {
-        name: 'Alminer Hard Wax',
+        name: 'R-minu Hard Wax',
         desc: 'An all-in-one premium hard wax for face, body, and Brazilian. Minimized skin irritation with a low melting point of 50-55°C.',
+        price: '49,800',
+        originalPrice: '69,000',
+        discount: '28%',
         specs: [
-          'Elasticity Tech: Break-free flexibility',
-          'Hair Cohesion Tech: Powerful hair grip',
-          'Low Temp Method: 50~55°C safe waxing',
-          'Paraffin #55: Smooth application'
+          'Elasticity Tech: MI 150 High Elasticity',
+          'Hair Cohesion Tech: 85% Abietic Acid Content',
+          'Adhesion Coating: Root-Focused Control',
+          'Food Grade: Safe Food-Grade Ingredients'
         ]
       },
-      cta: 'Buy on Coupang'
+      cta: 'Buy on Coupang',
+      shop: {
+        buyNow: 'Buy Now',
+        addToCart: 'Add to Cart',
+        total: 'Total',
+        quantity: 'Qty',
+        soldOut: 'Sold Out',
+        options: [
+          { label: '200g × 1 Piece', price: 9500 },
+          { label: '400g × 1 Piece', price: 14400 },
+          { label: '500g × 1 Piece', price: 14450 },
+          { label: '1000g × 1 Piece', price: 21140 },
+        ],
+        selectOption: 'Select Option'
+      },
+      gallery: {
+        pro1kg: 'R-minu 1kg Professional',
+        home200g: 'R-minu 200g Home Kit',
+        texture: 'Premium Texture'
+      }
     },
     footer: {
-      rights: '© 2024 Korea Ocean Marine Tech Research Institute. All rights reserved.',
-      companyName: 'Korea Ocean Marine Tech Research Institute Co., Ltd.',
+      rights: '© 2024 Ocean Tech Co., Ltd. All rights reserved.',
+      companyName: 'Ocean Tech Co., Ltd.',
       businessNum: 'Registration No: 000-00-00000',
       tel: 'Tel: +82 10-7169-3438',
       email: 'Email: jbanion@naver.com'

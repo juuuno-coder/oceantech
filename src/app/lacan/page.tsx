@@ -4,6 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import styles from './lacan.module.css';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
+import Image from 'next/image';
 
 export default function LacanPage() {
   const { t } = useLanguage();
@@ -11,7 +12,17 @@ export default function LacanPage() {
   return (
     <div className={styles.page}>
       {/* Hero Section */}
+      {/* Hero Section */}
       <section className={styles.hero}>
+        <div className={styles.heroBg}>
+          <Image 
+            src="/lacan/lacan_hero_1.jpg" 
+            alt="Lacan Professional Wax" 
+            fill 
+            className={styles.heroImg}
+            priority
+          />
+        </div>
         <div className={styles.heroOverlay} />
         <div className="container">
           <div className={styles.heroContent}>
@@ -53,21 +64,25 @@ export default function LacanPage() {
       <Section>
         <h2 className={styles.sectionTitle}>Product Lineup</h2>
         <div className={styles.productList}>
-          {t.lacan.products.map((product, index) => (
+          {t.lacan.products.map((product: any, index: number) => (
             <div key={index} className={styles.productCard}>
               <div className={styles.productImage}>
-                 {/* Placeholder for product image */}
-                 <div className={styles.placeholderImg}>
-                    <span>L</span>
-                 </div>
+                 <Image 
+                   src={product.img || (index % 2 === 0 ? "/lacan/lacan_thumb_1.jpg" : "/lacan/lacan_thumb_2.jpg")} 
+                   alt={product.name} 
+                   fill 
+                   className={styles.pImg} 
+                 />
               </div>
               <div className={styles.productInfo}>
                 <span className={styles.tag}>{product.tag}</span>
                 <h3>{product.name}</h3>
                 <p>{product.desc}</p>
-                <Button href="http://lacanwax.com/" variant="outline" size="sm" external>
-                  VIEW DETAIL
-                </Button>
+                <div className={styles.btnWrapper}>
+                  <Button href="http://lacanwax.com/" variant="outline" size="sm" external>
+                    VIEW DETAIL
+                  </Button>
+                </div>
               </div>
             </div>
           ))}

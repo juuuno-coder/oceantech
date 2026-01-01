@@ -1,0 +1,287 @@
+.container {
+  padding-top: 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.topSection {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 80px;
+  padding: 0 20px;
+}
+
+.gallery {
+  width: 50%;
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+}
+
+.mainImageWrapper {
+  width: 100%;
+  padding-top: 100%; /* Square aspect ratio 1:1 */
+  position: relative;
+  background: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+}
+
+.mainImage {
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+}
+
+.thumb {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumb.activeThumb {
+  border-color: #ff5c00;
+  border-width: 2px;
+}
+
+.thumbImg {
+  object-fit: cover;
+}
+
+.thumbPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+
+/* Info Area */
+.infoArea {
+  width: 50%;
+}
+
+.productTitle {
+  font-family: var(--font-sans);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #111;
+  line-height: 1.3;
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: #ffaa00;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reviewCount {
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.discountRate {
+  font-size: 1.5rem;
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.finalPrice {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #333;
+}
+
+.originalPrice {
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.shippingInfo {
+  margin-bottom: 25px;
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.shipLabel {
+  font-weight: 600;
+  margin-right: 10px;
+  color: #555;
+}
+
+.shipValue {
+  color: #333;
+  font-weight: 500;
+}
+
+.selectInput {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.selectedList {
+  background: #fafafa;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.selectedItem {
+  background: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.selectedItem:last-child {
+  margin-bottom: 0;
+}
+
+.itemTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #999;
+  line-height: 1;
+}
+
+.itemBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qtyControl {
+  display: flex;
+  border: 1px solid #ddd;
+}
+
+.qtyControl button {
+  width: 26px;
+  height: 26px;
+  background: #f8f8f8;
+  border: none;
+  cursor: pointer;
+}
+
+.qtyControl span {
+  width: 34px;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 26px;
+}
+
+.itemPrice {
+  font-weight: 700;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.totalRow span:first-child {
+  font-weight: 600;
+  color: #555;
+}
+
+.totalPriceText {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e74c3c;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.cartBtn, .buyBtn {
+  flex: 1;
+  height: 56px;
+  font-size: 1.1rem;
+}
+
+/* Tab Nav */
+.tabNav {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
+  background: #fff;
+  position: sticky;
+  top: 70px; /* Below header */
+  z-index: 10;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  background: #fff;
+}
+
+.activeTab {
+  color: #ff5c00;
+  border-bottom-color: #ff5c00;
+  font-weight: 700;
+}
+
+.detailContent {
+  min-height: 800px;
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .gallery, .infoArea {
+    width: 100%;
+  }
+}

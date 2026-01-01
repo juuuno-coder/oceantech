@@ -22,13 +22,20 @@ export default function Footer() {
                <p>{t.footer.email}</p>
             </div>
             <div className={styles.links}>
+               <h4 className={styles.linkTitle}>Quick Links</h4>
                <Link href="/about">{t.nav.about}</Link>
                <Link href="/lacan">{t.nav.lacan}</Link>
                <Link href="/alminer">{t.nav.alminer}</Link>
+               <Link href="/admin">Admin Panel</Link>
             </div>
           </div>
           
           <div className={styles.bottom}>
+            <div className={styles.socials}>
+              <span>Instagram</span>
+              <span>Kakao</span>
+              <span>Blog</span>
+            </div>
             <p className={styles.copyright}>{t.footer.rights}</p>
           </div>
         </div>

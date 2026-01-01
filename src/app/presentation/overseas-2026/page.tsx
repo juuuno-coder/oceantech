@@ -30,7 +30,7 @@ const content = {
       card2: {
         title: "Brand & Commerce Integration",
         items: [
-          { title: "Unified Brand Showcase:", desc: "Showcasing \"Alminer\" (Premium Food Tech) and \"Lacan\" (Marine Wax) portfolios in one hub." },
+          { title: "Unified Brand Showcase:", desc: "Showcasing \"Alminer\" (Premium Home Waxing) and \"Lacan\" (Marine Wax) portfolios in one hub." },
           { title: "Cross-Border Commerce:", desc: "Direct purchase capabilities integrated with global payment gateways (PayPal, Stripe)." },
           { title: "Business Inquiry System:", desc: "Dedicated B2B quote request forms directly connected to CRM." }
         ]
@@ -95,7 +95,7 @@ const content = {
       card2: {
         title: "브랜드 및 커머스 통합",
         items: [
-          { title: "통합 브랜드 쇼케이스:", desc: "\"알마이너\"(프리미엄 푸드테크)와 \"라캉\"(해양 왁스) 포트폴리오의 통합 허브 구축." },
+          { title: "통합 브랜드 쇼케이스:", desc: "\"알마이너\"(프리미엄 홈 왁싱)와 \"라캉\"(해양 왁스) 포트폴리오의 통합 허브 구축." },
           { title: "크로스보더 커머스:", desc: "페이팔(PayPal), 스트라이프 등 글로벌 결제 모듈 연동을 통한 직접 구매 구현." },
           { title: "비즈니스 문의 시스템:", desc: "CRM과 연동된 B2B 전용 견적 및 제휴 문의 시스템 구축." }
         ]

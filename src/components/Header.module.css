@@ -41,6 +41,13 @@
   color: var(--primary);
 }
 
+.logo span {
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  margin: 0 4px;
+}
+
 .inner {
   display: flex;
   justify-content: space-between;
@@ -97,7 +104,60 @@
 .langSwitch {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.authMenu {
+  margin-left: 30px;
+  font-size: 0.9rem;
+}
+
+.guestMenu, .userMenu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.authLink {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.header.darkHero .authLink {
+  color: white;
+}
+
+.header.scrolled .authLink {
+  color: #333;
+}
+
+.userName {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.header.darkHero .userName {
+  color: white;
+}
+
+.header.scrolled .userName {
+  color: #333;
+}
+
+.adminLink {
+  background: #ff5c00;
+  color: white !important;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .langBtn {
@@ -117,6 +177,63 @@
   color: var(--border);
   font-size: 0.8rem;
 }
+
+/* Mobile Drawer Styles */
+.mobileDrawer {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+.drawerContent {
+  background: var(--surface);
+  width: 100%;
+  padding: 40px 20px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  animation: slideDownNav 0.3s ease-out;
+}
+
+@keyframes slideDownNav {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.mobileNav a, .mobileNav button {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary);
+  background: none;
+  border: none;
+  font-family: var(--font-serif);
+}
+
+.drawerDivider {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 10px 0;
+}
+
+@media (max-width: 900px) {
+  .nav, .authMenu {
+    display: none;
+  }
+  .mobileMenuBtn {
+    display: block;
+  }
+}  
 @media (max-width: 768px) {
   .nav {
     display: none; /* Hide desktop nav on mobile for now */

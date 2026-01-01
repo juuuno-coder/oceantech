@@ -37,10 +37,11 @@
   margin-bottom: 8px;
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.linkTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
 }
 
 .links a {
@@ -50,13 +51,26 @@
 }
 
 .links a:hover {
-  color: white;
+  color: var(--accent);
 }
 
 .bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.05);
   padding-top: 30px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+  color: #666;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .copyright {

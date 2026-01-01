@@ -1,0 +1,150 @@
+.container {
+  padding: 40px;
+  max-width: 100%;
+  overflow-x: auto;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.header p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: #888;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  display: inline-flex;
+}
+
+.loading, .error {
+  padding: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.error {
+  color: red;
+}
+
+.tableWrapper {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  overflow-x: auto;
+  margin-bottom: 40px;
+}
+
+.priceTable {
+  width: 100%;
+  border-collapse: separate; /* Changed for sticky positioning */
+  border-spacing: 0;
+  min-width: 1200px;
+}
+
+.priceTable th, .priceTable td {
+  padding: 16px;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.priceTable th {
+  background: #f1f3f5;
+  font-weight: 600;
+  color: #495057;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.stickyCol {
+  position: sticky;
+  left: 0;
+  background: inherit; /* Inherit background from row/th */
+  z-index: 20; /* Higher z-index than normal headers */
+  text-align: left !important;
+  border-right: 2px solid #eee;
+}
+
+.priceTable th.stickyCol {
+  z-index: 30; /* Highest for top-left corner */
+}
+
+/* Second sticky column adjustment */
+.priceTable td:nth-child(2),
+.priceTable th:nth-child(2) {
+  left: 200px; /* Adjust based on first col width */
+  text-align: right !important;
+}
+/* Note: Simplified sticky for just the first name column is easier. Let's just stick first col. */
+.stickyCol {
+  left: 0;
+}
+.priceTable td:nth-child(2), .priceTable th:nth-child(2) {
+  position: static; /* Let price scroll */
+  border-right: none;
+}
+
+
+.thContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.currCode {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.rate {
+  font-size: 0.75rem;
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+.krwPrice {
+  font-weight: bold;
+  color: #333;
+}
+
+.priceTable tr:hover td {
+  background-color: #f8f9fa;
+}
+
+/* Ensure sticky col background is solid on hover */
+.priceTable tr:hover td.stickyCol {
+  background-color: #f8f9fa;
+}
+.priceTable td.stickyCol {
+  background-color: #fff; /* Default bg */
+}
+.priceTable th.stickyCol {
+  background-color: #f1f3f5;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -4,12 +4,14 @@ import { useLanguage } from '@/context/LanguageContext';
 import styles from './page.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import PopupBanner from '@/components/PopupBanner';
 
 export default function Home() {
   const { t } = useLanguage();
 
   return (
     <div className={styles.container}>
+      <PopupBanner />
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
@@ -23,8 +25,8 @@ export default function Home() {
           />
         </div>
         <div className={styles.heroContent}>
-          <h1 className="fade-in">Converging<br />Ocean Tech & Beauty</h1>
-          <p className="fade-in" style={{ animationDelay: '0.2s' }}>해양 바이오 데이터와 첨단 뷰티 과학의 만남</p>
+          <h1 className="fade-in">Premium Waxing<br />Standard</h1>
+          <p className="fade-in" style={{ animationDelay: '0.2s' }}>전문가를 위한 라캉, 당신을 위한 R-minu</p>
         </div>
         <div className={`${styles.scrollIndicator} fade-in`} style={{ animationDelay: '1.2s' }}>
            <span>SCROLL</span>
@@ -33,13 +35,7 @@ export default function Home() {
         <div className={styles.heroOverlay}></div>
       </section>
 
-      {/* Intro Section */}
-      <section className="section container">
-        <div className={styles.intro}>
-          <h2>{t.about.title}</h2>
-          <p>{t.about.description}</p>
-        </div>
-      </section>
+      {/* Intro Section Removed as requested: straightforward brand focus */}
 
       {/* Brands Section */}
       <section className={styles.brands}>
@@ -77,13 +73,13 @@ export default function Home() {
           <div className={`${styles.brandVisual} ${styles.alminerVisual}`}>
              <Image 
               src="/alminer-bg.png" 
-              alt="Alminer Bio Tech" 
+              alt="R-minu Home Waxing" 
               fill
               quality={90}
               style={{ objectFit: 'cover' }}
             />
             <div className={styles.visualOverlayLight}></div>
-             <span className={styles.brandBgLabel}>TECH</span>
+             <span className={styles.brandBgLabel}>HOME</span>
           </div>
         </div>
       </section>

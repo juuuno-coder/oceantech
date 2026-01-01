@@ -1,0 +1,48 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
+import styles from "./ProductDetail.module.css";
+
+export default function ProductDetail() {
+  const { language } = useLanguage();
+
+  // Map 'ko' to 'kr' for folder name
+  const langFolder = language === "ko" ? "kr" : "en";
+  const prefix = language === "ko" ? "rminu-kr" : "rminu-en";
+
+  // Total number of images
+  const totalImages = 17;
+
+  // Helper to get extension
+  const getExtension = (index: number, lang: string) => {
+    if (lang === "ko") return "jpg";
+    // English logic
+    if (index === 2) return "jpg";
+    return "jpeg";
+  };
+
+  const images = Array.from({ length: totalImages }, (_, i) => {
+    const index = i + 1;
+    const paddedIndex = index.toString().padStart(2, "0");
+    const ext = getExtension(index, language);
+    return `/${langFolder}/${prefix}_${paddedIndex}.${ext}`;
+  });
+
+  return (
+    <div className={styles.container}>
+      {images.map((src, index) => (
+        <div key={index} className={styles.imageWrapper}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={`Product Detail ${index + 1}`}
+            loading={index < 2 ? "eager" : "lazy"}
+            className={styles.detailImage}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}

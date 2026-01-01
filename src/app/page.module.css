@@ -217,9 +217,14 @@
 
 @media (max-width: 768px) {
   .heroContent h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
   }
   
+  .hero {
+    padding-top: 15vh; /* Slightly higher on mobile */
+  }
+
   .brands {
     grid-template-columns: 1fr;
   }

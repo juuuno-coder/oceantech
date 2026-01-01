@@ -1,0 +1,36 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 99;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.scrollToTop:hover {
+  transform: translateY(-5px);
+  opacity: 1;
+  background: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .scrollToTop {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}

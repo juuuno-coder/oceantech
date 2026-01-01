@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  background: white;
+}
+
+.storyIntro {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fdfbf7;
+  margin-bottom: 20px;
+}
+
+.storyIntro h2 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-family: var(--font-serif);
+}
+
+.storyIntro p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.imageWrapper {
+  width: 100%;
+  position: relative;
+  /* Next/Image needs height, but standard img handles auto height better for cuts */
+  line-height: 0;
+}
+
+.detailImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
