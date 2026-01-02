@@ -5,6 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import styles from './admin.module.css';
 import { useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 import PriceSimulator from '@/components/admin/PriceSimulator';
 import OrderManager from '@/components/admin/OrderManager';
 import AdminSettings from '@/components/admin/AdminSettings';
@@ -13,6 +14,7 @@ import StoreStatus from '@/components/admin/StoreStatus';
 
 export default function AdminPage() {
   const { user, isLoading } = useAuth();
+  const { language } = useLanguage();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('dashboard');
 
@@ -38,44 +40,59 @@ export default function AdminPage() {
             className={`${styles.navItem} ${activeTab === 'dashboard' ? styles.active : ''}`}
             onClick={() => setActiveTab('dashboard')}
           >
-            Dashboard
+            {language === 'ko' ? '대시보드' : 'Dashboard'}
           </div>
           <div 
             className={`${styles.navItem} ${activeTab === 'orders' ? styles.active : ''}`}
             onClick={() => setActiveTab('orders')}
           >
-            Orders
+            {language === 'ko' ? '주문 관리' : 'Orders'}
           </div>
           <div 
             className={`${styles.navItem} ${activeTab === 'pricing' ? styles.active : ''}`}
             onClick={() => setActiveTab('pricing')}
           >
-            Global Pricing
+            {language === 'ko' ? '글로벌 가격' : 'Global Pricing'}
           </div>
           <div 
             className={`${styles.navItem} ${activeTab === 'banners' ? styles.active : ''}`}
             onClick={() => setActiveTab('banners')}
           >
-            Banner Manager
+            {language === 'ko' ? '배너 관리' : 'Banner Manager'}
           </div>
           <div 
             className={`${styles.navItem} ${activeTab === 'stores' ? styles.active : ''}`}
             onClick={() => setActiveTab('stores')}
           >
-            Store Status
+            {language === 'ko' ? '입점 현황' : 'Store Status'}
           </div>
           <div 
             className={`${styles.navItem} ${activeTab === 'settings' ? styles.active : ''}`}
             onClick={() => setActiveTab('settings')}
           >
-            Settings
+            {language === 'ko' ? '설정' : 'Settings'}
           </div>
         </nav>
       </div>
 
       <div className={styles.main}>
         <header className={styles.header}>
-          <h1>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</h1>
+          <h1>
+            {(() => {
+              if (language === 'ko') {
+                switch (activeTab) {
+                  case 'dashboard': return '대시보드';
+                  case 'orders': return '주문 관리';
+                  case 'pricing': return '글로벌 가격 전략';
+                  case 'banners': return '배너 및 팝업 관리';
+                  case 'stores': return '입점 스토어 현황';
+                  case 'settings': return '시스템 설정';
+                  default: return activeTab;
+                }
+              }
+              return activeTab.charAt(0).toUpperCase() + activeTab.slice(1);
+            })()}
+          </h1>
           <div className={styles.profile}>{user.name}</div>
         </header>
 
@@ -84,27 +101,31 @@ export default function AdminPage() {
             <>
               <div className={styles.statsGrid}>
                 <div className={styles.statCard}>
-                  <h3>Total Orders</h3>
+                  <h3>{language === 'ko' ? '총 주문 수' : 'Total Orders'}</h3>
                   <div className={styles.value}>1,024</div>
-                  <div className={styles.trend}>+12% from last month</div>
+                  <div className={styles.trend}>{language === 'ko' ? '지난달 대비 +12%' : '+12% from last month'}</div>
                 </div>
                 <div className={styles.statCard}>
-                  <h3>Revenue</h3>
+                  <h3>{language === 'ko' ? '매출액' : 'Revenue'}</h3>
                   <div className={styles.value}>₩84,320,000</div>
-                  <div className={styles.trend}>+5% from last month</div>
+                  <div className={styles.trend}>{language === 'ko' ? '지난달 대비 +5%' : '+5% from last month'}</div>
                 </div>
                 <div className={styles.statCard}>
-                  <h3>Pending Shipments</h3>
+                  <h3>{language === 'ko' ? '배송 대기' : 'Pending Shipments'}</h3>
                   <div className={styles.value}>42</div>
-                  <div className={styles.trend} style={{color: 'orange'}}>Action Needed</div>
+                  <div className={styles.trend} style={{color: 'orange'}}>{language === 'ko' ? '처리 필요' : 'Action Needed'}</div>
                 </div>
               </div>
 
               <div className={styles.recentOrders}>
-                <h2>Recent Activity</h2>
+                <h2>{language === 'ko' ? '최근 활동' : 'Recent Activity'}</h2>
                 <div className={styles.alertBox}>
-                  <strong>Ready for Portone Payments</strong>
-                  <p>Configure API keys in Settings to enable real-time order tracking.</p>
+                  <strong>{language === 'ko' ? '포트원 결제 연동 준비' : 'Ready for Portone Payments'}</strong>
+                  <p>
+                    {language === 'ko' 
+                      ? '설정(Settings) 메뉴에서 API 키를 설정하여 실시간 주문 추적을 활성화하세요.' 
+                      : 'Configure API keys in Settings to enable real-time order tracking.'}
+                  </p>
                 </div>
               </div>
             </>

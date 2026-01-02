@@ -12,6 +12,8 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   external?: boolean;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export default function Button({
@@ -22,6 +24,8 @@ export default function Button({
   onClick,
   className = '',
   external = false,
+  disabled = false,
+  type = 'button',
 }: ButtonProps) {
   const classes = `${styles.btn} ${styles[variant]} ${styles[size]} ${className}`;
 
@@ -41,7 +45,7 @@ export default function Button({
   }
 
   return (
-    <button className={classes} onClick={onClick}>
+    <button className={classes} onClick={onClick} disabled={disabled} type={type}>
       {children}
     </button>
   );

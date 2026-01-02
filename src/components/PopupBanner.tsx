@@ -6,6 +6,9 @@ import styles from './PopupBanner.module.css';
 
 export default function PopupBanner() {
   const [isVisible, setIsVisible] = useState(false);
+  const [position, setPosition] = useState({ x: 100, y: 100 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const checkVisibility = () => {
@@ -53,12 +56,59 @@ export default function PopupBanner() {
     setIsVisible(false);
   };
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragOffset({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y
+    });
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (isDragging) {
+        setPosition({
+          x: e.clientX - dragOffset.x,
+          y: e.clientY - dragOffset.y
+        });
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleMouseUp);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging, dragOffset]);
+
   if (!isVisible) return null;
 
   return (
-    <div className={styles.overlay}>
-      <div className={styles.popup}>
-        <div className={styles.imageWrapper}>
+    <div 
+      className={styles.popup}
+      style={{ 
+        position: 'fixed', 
+        left: position.x, 
+        top: position.y,
+        margin: 0, // Reset centering margins
+        cursor: isDragging ? 'grabbing' : 'default'
+      }}
+    >
+      <div 
+        className={styles.dragHandle}
+        onMouseDown={handleMouseDown}
+      >
+        <span>:: Drag to Move</span>
+      </div>
+      <div className={styles.imageWrapper}>
           <Image 
             src="/라캉-무료테스트-전단.png" 
             alt="Lacan Free Test Event" 
@@ -75,7 +125,6 @@ export default function PopupBanner() {
             닫기
           </button>
         </div>
-      </div>
     </div>
   );
 }

@@ -30,7 +30,7 @@ export default function Header() {
       <div className="container">
         <div className={styles.inner}>
           <Link href="/" className={styles.logo}>
-            LACAN <span>&</span> R-MINU
+            OCEANTECH
           </Link>
 
           <nav className={styles.nav}>

@@ -4,9 +4,34 @@ import { useLanguage } from '@/context/LanguageContext';
 import styles from './login.module.css';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
 
 export default function ProLoginPage() {
   const { t, language } = useLanguage();
+  const router = useRouter();
+  const { login } = useAuth();
+  const [email, setEmail] = useState('');
+  const [pw, setPw] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    const result = await login(email, pw);
+    
+    if (result.success) {
+      // Login success
+      router.push('/lacan'); // Or a specific Pro dashboard
+    } else {
+      setError(result.error || 'Login failed');
+      setLoading(false);
+    }
+  };
 
   return (
     <div className={styles.page}>
@@ -18,17 +43,31 @@ export default function ProLoginPage() {
             <p>{t.pro.login.desc}</p>
           </div>
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
-              <label>{t.pro.login.idLabel}</label>
-              <input type="text" placeholder="000-00-00000" className={styles.input} />
+              <label>Email</label>
+              <input 
+                type="email" 
+                placeholder="email@example.com" 
+                className={styles.input} 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
             <div className={styles.inputGroup}>
               <label>{t.pro.login.pwLabel}</label>
-              <input type="password" className={styles.input} />
+              <input 
+                type="password" 
+                className={styles.input} 
+                value={pw}
+                onChange={(e) => setPw(e.target.value)}
+                required
+              />
             </div>
-            <Button variant="lacan" size="lg" className={styles.loginBtn}>
-              {t.pro.login.btn}
+            {error && <p className={styles.errorMsg} style={{color: 'red', marginBottom: '10px'}}>{error}</p>}
+            <Button variant="lacan" size="lg" className={styles.loginBtn} disabled={loading}>
+              {loading ? 'Logging in...' : t.pro.login.btn}
             </Button>
           </form>
 

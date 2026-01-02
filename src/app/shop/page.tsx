@@ -87,16 +87,7 @@ export default function ShopPage() {
               <span className={styles.marketName}>{t.shopPage.global.shopee}</span>
               <span className={styles.arrow}>→</span>
             </a>
-            <a href="https://www.qoo10.com" target="_blank" rel="noreferrer" className={styles.globalLink}>
-              <span className={styles.marketIcon}>Q</span>
-              <span className={styles.marketName}>{t.shopPage.global.qoo10}</span>
-              <span className={styles.arrow}>→</span>
-            </a>
-            <a href="https://www.rakuten.co.jp" target="_blank" rel="noreferrer" className={styles.globalLink}>
-              <span className={styles.marketIcon}>R</span>
-              <span className={styles.marketName}>{t.shopPage.global.rakuten}</span>
-              <span className={styles.arrow}>→</span>
-            </a>
+
           </div>
         </section>
       )}
