@@ -47,7 +47,7 @@ export default function ShopPage() {
           <div className={`${styles.card} fade-in`} style={{ animationDelay: '0.6s' }}>
             <div className={styles.cardImage}>
               <Image 
-                src="/alminer-bg.png" 
+                src="/rminu/알마이너-추가-썸네일.jpg" 
                 alt="Alminer" 
                 fill 
                 style={{ objectFit: 'cover' }}
