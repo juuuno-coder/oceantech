@@ -11,6 +11,7 @@ import OrderManager from '@/components/admin/OrderManager';
 import AdminSettings from '@/components/admin/AdminSettings';
 import BannerManager from '@/components/admin/BannerManager';
 import StoreStatus from '@/components/admin/StoreStatus';
+import MemberManager from '@/components/admin/MemberManager';
 
 export default function AdminPage() {
   const { user, isLoading } = useAuth();
@@ -49,6 +50,12 @@ export default function AdminPage() {
             {language === 'ko' ? '주문 관리' : 'Orders'}
           </div>
           <div 
+            className={`${styles.navItem} ${activeTab === 'members' ? styles.active : ''}`}
+            onClick={() => setActiveTab('members')}
+          >
+            {language === 'ko' ? '회원 승인/관리' : 'Members'}
+          </div>
+          <div 
             className={`${styles.navItem} ${activeTab === 'pricing' ? styles.active : ''}`}
             onClick={() => setActiveTab('pricing')}
           >
@@ -83,6 +90,7 @@ export default function AdminPage() {
                 switch (activeTab) {
                   case 'dashboard': return '대시보드';
                   case 'orders': return '주문 관리';
+                  case 'members': return '회원 승인 및 관리';
                   case 'pricing': return '글로벌 가격 전략';
                   case 'banners': return '배너 및 팝업 관리';
                   case 'stores': return '입점 스토어 현황';
@@ -132,6 +140,7 @@ export default function AdminPage() {
           )}
 
           {activeTab === 'orders' && <OrderManager />}
+          {activeTab === 'members' && <MemberManager />}
           {activeTab === 'pricing' && <PriceSimulator />}
           {activeTab === 'banners' && <BannerManager />}
           {activeTab === 'stores' && <StoreStatus />}

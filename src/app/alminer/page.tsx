@@ -1,6 +1,4 @@
 'use client';
-export const revalidate = 0; // Disable cache for this page
-export const dynamic = 'force-dynamic';
 
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './alminer.module.css';
