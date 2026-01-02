@@ -68,6 +68,27 @@ export default function AlminerShopPage() {
 
   const totalPrice = selectedOptions.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
+  // Calculate estimated arrival (Simple Logic: If before 3PM -> Tomorrow, else Day after tomorrow)
+  const getEstimatedArrival = () => {
+    const now = new Date();
+    const cutoffHour = 15; // 3 PM cutoff
+    let arrivalDate = new Date();
+
+    if (now.getHours() < cutoffHour) {
+      arrivalDate.setDate(now.getDate() + 1); // Tomorrow
+    } else {
+      arrivalDate.setDate(now.getDate() + 2); // Day after tomorrow
+    }
+    
+    // Add logic to skip Sunday/Holidays if needed, keeping it simple for now
+    const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+    const month = arrivalDate.getMonth() + 1;
+    const date = arrivalDate.getDate();
+    const day = dayNames[arrivalDate.getDay()];
+    
+    return `${month}/${date}(${day}) 도착 보장`;
+  };
+
   return (
     <div className={styles.container}>
       {/* Top Section: Gallery & Info */}
@@ -107,7 +128,7 @@ export default function AlminerShopPage() {
           
           <div className={styles.shippingInfo}>
              <span className={styles.shipLabel}>배송</span>
-             <span className={styles.shipValue}>무료배송 • 내일(수) 도착 보장</span>
+             <span className={styles.shipValue}>무료배송 • <strong>{getEstimatedArrival()}</strong></span>
           </div>
 
           <div className={styles.divider}></div>
