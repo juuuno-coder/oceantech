@@ -43,6 +43,17 @@ export default function ProductDetail() {
           />
         </div>
       ))}
+      
+      {/* Review Section Image from User Request */}
+      <div className={styles.imageWrapper} style={{ marginTop: '0' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/20260101_230847.png" 
+          alt="Customer Reviews from Coupang"
+          loading="lazy"
+          className={styles.detailImage}
+        />
+      </div>
     </div>
   );
 }
