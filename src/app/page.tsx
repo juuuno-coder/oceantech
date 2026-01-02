@@ -72,7 +72,7 @@ export default function Home() {
           </div>
           <div className={`${styles.brandVisual} ${styles.alminerVisual}`}>
              <Image 
-              src="/alminer-bg.png" 
+              src="/rminu/알마이너-추가-썸네일.jpg" 
               alt="R-minu Home Waxing" 
               fill
               quality={90}
