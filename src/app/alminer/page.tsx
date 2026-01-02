@@ -15,7 +15,7 @@ export default function AlminerPage() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image 
-            src="/rminu/알마이너-썸네일-1000g-2종.jpg" 
+            src="/rminu/알마이너-추가-썸네일.jpg" 
             alt="Alminer R-minu" 
             fill 
             className={styles.heroImg}
