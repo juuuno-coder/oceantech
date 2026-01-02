@@ -1,4 +1,6 @@
 'use client';
+export const revalidate = 0; // Disable cache for this page
+export const dynamic = 'force-dynamic';
 
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './alminer.module.css';
@@ -15,10 +17,11 @@ export default function AlminerPage() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image 
-            src="/alminer-bg.png" 
+            src="/rminu/알마이너-썸네일-1000g-2종.jpg" 
             alt="Alminer R-minu" 
             fill 
             className={styles.heroImg}
+            style={{ objectFit: 'cover' }}
             priority
           />
         </div>
